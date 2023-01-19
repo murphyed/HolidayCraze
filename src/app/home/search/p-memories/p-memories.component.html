@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="titleContainer">
+    <a class="title">Memories Viewed</a>
+  </div>
+  <div class="infoContainer" *ngIf="viewedM === false">
+    <h2>Nothing here till you view a memory.</h2>
+  </div>
+  <div class="memoryContainer" *ngIf="viewedM === true">
+    <div class="memoryBox" *ngFor="let memory of viewedMemories; let index = i">
+      <div class="group">
+        <p class="country">{{ memory.country }}</p>
+        <p class="holidayName">{{ memory.holidayName }}</p>
+        <p class="holidayDate">{{ memory.holidayDate }}</p>
+        <div class="box">
+          <p class="memory">{{ memory.memory }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

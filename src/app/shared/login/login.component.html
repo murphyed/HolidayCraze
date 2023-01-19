@@ -1,0 +1,44 @@
+<div class="container">
+  <div class="subContainer1">
+    <h1>Holiday Craze</h1>
+    <h2>Create memories for every holiday.</h2>
+  </div>
+  <div class="subContainer" *ngIf="formNo === 1">
+    <h1>Login</h1>
+    <form>
+      <div class="group">
+        <input type="text" placeholder="Email" #email>
+      </div>
+      <div class="group">
+        <input type="password" placeholder="password" #password>
+      </div>
+      <div class="group">
+        <button class="btn1" (click)="loginWithout()">Login</button>
+      </div>
+    </form>
+    <div class="subGroup">
+      <h4>Don't have an account?</h4>
+      <h4>Click <button class="btn2" (click)="changeForm()">here</button></h4>
+    </div>
+    <div class="circle1Inactive" [ngClass]="active === true ? 'circle1Active':'circle1Inactive'">
+    </div>
+  </div>
+  <div class="subContainer" *ngIf="formNo === 2">
+    <h1 class="signUp">SignUp</h1>
+    <form>
+      <div class="group">
+        <input type="text" placeholder="Email" #email2>
+      </div>
+      <div class="group">
+        <input type="password" placeholder="password" #password2>
+      </div>
+      <div class="group">
+        <button class="btn1" (click)="register(email2.value, password2.value)">Sign up</button>
+      </div>
+    </form>
+    <div class="subGroup">
+      <h4>Already have an account?</h4>
+      <h4>Click <button class="btn2" (click)="changeForm()">here</button></h4>
+    </div>
+  </div>
+</div>

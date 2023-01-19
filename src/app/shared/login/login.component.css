@@ -1,0 +1,246 @@
+.container {
+  background-color: #363062;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+  position: relative;
+  overflow: hidden;
+  padding-bottom: 2rem;
+}
+.subContainer {
+  height: 500px;
+  background-color: #363062;
+  width: 500px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  position: relative;
+  border-radius: 50%;
+  box-shadow: 10px 10px 20px 0px rgb(0, 0, 0, 0.2),
+    -10px -10px 20px 0px rgb(233, 213, 218, 0.04);
+}
+
+.group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.subGroup {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+h1 {
+  color: #e9d5da;
+  font-size: 5rem;
+  font-family: "Reenie Beanie", cursive;
+  font-weight: 100;
+}
+h2 {
+  color: #e9d5da;
+  font-size: 2.15rem;
+  letter-spacing: 0.1rem;
+  font-weight: 100;
+}
+
+h4 {
+  color: #e9d5da;
+  font-size: 0.85rem;
+  letter-spacing: 0.1rem;
+  font-weight: 100;
+}
+
+input {
+  text-align: center;
+  border: none;
+  background-color: #e9d5da;
+  padding: 0.4rem;
+  height: 35px;
+  width: 250px;
+  max-width: 250px;
+  outline: none;
+  border-radius: 2rem;
+  letter-spacing: 0.07rem;
+  color: #363062;
+  transition: 200ms ease-out;
+  opacity: 1;
+}
+
+input::placeholder {
+  transition: 200ms ease-out;
+  opacity: 1;
+}
+
+input:focus::placeholder {
+  opacity: 0;
+  transition: 200ms ease-in;
+}
+
+.btn1 {
+  outline: none;
+  background-color: #363062;
+  height: 70px;
+  width: 70px;
+  padding: 0.25rem;
+  border: none;
+  border-radius: 50%;
+  letter-spacing: 0.05rem;
+  color: #e9d5da;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px 0px rgb(0, 0, 0, 0.2),
+    -2px -2px 5px 0px rgb(233, 213, 218, 0.04);
+  margin-top: 0.75rem;
+  transition: 400ms;
+}
+
+.btn2 {
+  background-color: transparent;
+  color: #e9d5da;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: 0.1rem;
+  transition: 300ms;
+}
+
+.btn2:hover {
+  color: #84797c;
+  transition: 300ms;
+}
+
+.circle1Inactive {
+  position: absolute;
+  isolation: isolate;
+  background-color: gainsboro;
+  height: 0%;
+  width: 0%;
+  border-radius: 50%;
+  transition: 500ms;
+  animation: none;
+  animation-duration: 1s;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-iteration-count: 1;
+  transform-origin: center;
+  transform: scale(0);
+  z-index: -1;
+  position: relative;
+}
+.circle1Active {
+  position: absolute;
+  isolation: isolate;
+  background-color: #e9d5da;
+  height: 500%;
+  width: 500%;
+  border-radius: 50%;
+  transition: 500ms;
+  animation: change;
+  animation-duration: 1s;
+  transform: scale(1);
+  transform-origin: center;
+  animation-timing-function: cubic-bezier(0.165, 0.84, 0.44, 1);
+  animation-iteration-count: 1;
+  z-index: 1;
+}
+
+@keyframes change {
+  from {
+    height: 0%;
+    width: 0%;
+    z-index: -1;
+    transform: scale(0);
+    transform-origin: center;
+  }
+  to {
+    height: 500%;
+    width: 500%;
+    z-index: 1;
+    transform: scale(1);
+    transform-origin: center;
+  }
+}
+.signUp {
+  font-size: 3.5rem;
+}
+
+@media (width < 1060px) {
+  .container {
+    background-color: #363062;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 2rem;
+  }
+
+  .subContainer {
+    height: 350px;
+    background-color: #363062;
+    width: 350px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    position: relative;
+    border-radius: 50%;
+    box-shadow: 10px 10px 20px 0px rgb(0, 0, 0, 0.2),
+      -10px -10px 20px 0px rgb(233, 213, 218, 0.04);
+  }
+
+  h1 {
+    color: #e9d5da;
+    font-size: 3rem;
+    font-family: "Reenie Beanie", cursive;
+    font-weight: 100;
+  }
+  h2 {
+    color: #e9d5da;
+    font-size: 1.5rem;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+  }
+
+  h4 {
+    color: #e9d5da;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    font-weight: 100;
+  }
+
+  input {
+    text-align: center;
+    border: none;
+    background-color: #e9d5da;
+    padding: 0.4rem;
+    height: 25px;
+    width: 190px;
+    max-width: 250px;
+    outline: none;
+    border-radius: 2rem;
+    letter-spacing: 0.07rem;
+    color: #363062;
+    transition: 200ms ease-out;
+    opacity: 1;
+  }
+}

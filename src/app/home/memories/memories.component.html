@@ -1,0 +1,67 @@
+<div class="container">
+  <div class="subContainer" #subContainer *ngIf="viewTime === true">
+    <div class="memoryContainer">
+      <div class=" circle"
+        [ngStyle]="{ top: object.y+'%', left: object.x+'%', height: object.h+'px', width:object.w+'px'}"
+        [id]="object.id" (click)="modalState(object.id)" *ngFor="let object of circles; let index = i">
+      </div>
+    </div>
+  </div>
+  <div class="modal" *ngIf="modalStatus === true" #modal>
+    <div class="memoryBox" #memoryContainer>
+      <div class="group1">
+        <p #holidayName class="holidayName"></p>
+        <div class="subGroup">
+          <p>in</p>
+          <p #country class="country"></p>
+        </div>
+      </div>
+      <div class="group4">
+        <p #holidayDate class="holidayDate"></p>
+      </div>
+      <div class="group2">
+        <p #memory class="memory"></p>
+      </div>
+      <div class="group3">
+        <div class="overlay"></div>
+        <button class="buttonAdd" (mouseenter)="hoverStateA()" (mouseleave)="hoverStateI()" (click)="closeMemory()">
+          <div [ngClass]="hover === true ? 'line1F':'line1'"></div>
+          <div [ngClass]="hover === true ? 'line2F':'line2'"></div>
+        </button>
+      </div>
+    </div>
+  </div>
+  <div class="timerContainer2" id="timerContainer2" *ngIf="viewTime === true">
+    <div class="timer2">
+      <p class="number2" #DaysUp>{{ daysCountUp }}d</p>
+      <p class="number2" #hoursUp>{{ hourCountUp }}h</p>
+      <p class="number2" #minsUp>{{ minCountUp}}m</p>
+      <p class="number2" #secondsUp>{{secondCountUp}}s</p>
+    </div>
+    <p class="info2">to view</p>
+  </div>
+
+  <div class="subContainer2" #subContainer *ngIf="viewTime === false">
+    <div class="timerContainer">
+      <div class="timer" #timer>
+        <div class="tContainer">
+          <p #days id="days" class="number">{{ dayCountDown }}d</p>
+        </div>
+
+        <div class="tContainer">
+          <p #hours id="hours" class="number">{{ hourCountDown }}h</p>
+        </div>
+
+        <div class="tContainer">
+          <p #mins id="mins" class="number">{{ minCountDown }}m</p>
+        </div>
+
+        <div class="tContainer">
+          <p #seconds id="seconds" class="number">{{ secondCountDown }}s</p>
+        </div>
+
+      </div>
+      <h1 class="info" #info>till memories become available.</h1>
+    </div>
+  </div>
+</div>

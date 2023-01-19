@@ -1,0 +1,50 @@
+<div class="container">
+  <button class="pastBtn" (click)="changeView()" [ngClass]="pMemories === true ? 'pastBtnActive':'pastBtn'">
+    <div class="innerCircle" [ngClass]="pMemories === true ? 'innerCircleActive':'innerCircle'"></div>
+  </button>
+  <app-p-memories *ngIf="pMemories === true"></app-p-memories>
+  <div class="countries" *ngIf="pMemories === false">
+    <a (click)="fetchData('US')">United States</a>
+    <a (click)="fetchData('NO')">Norway</a>
+    <a (click)="fetchData('JP')">Japan</a>
+    <a (click)="fetchData('GR')">Greece</a>
+    <a (click)="fetchData('RU')">Russia</a>
+    <a (click)="fetchData('EG')">Egypt</a>
+  </div>
+  <div class="countryContainer" *ngIf="pMemories === false">
+    <div class="info" *ngFor="let holiday of holidaysArray; let i = index">
+      <button id="{{i}}" class="localName" (mouseover)="changeState()" (mouseout)="changeState()" (mouseover)="getId(i)"
+        (mouseout)="getId(i)" (click)="modalState(i)">
+        {{holiday.localName}}
+      </button>
+      <p class="date">{{ holiday.date }} </p>
+    </div>
+    <form [formGroup]="newMemory" (ngSubmit)="newMemory" accept-charset="utf-8">
+      <div class="modal" *ngIf="modalStatus === true" #modal>
+        <div class="memoryContainer" #memoryContainer>
+          <div class="group">
+            <div class="nameContainer">
+              <p class="country">Celebrating</p>
+              <p #holidayName class="holidayName"></p>
+            </div>
+            <p #holidayDate class="holidayDate"></p>
+          </div>
+          <div class="group1">
+            <div class="subGroup">
+              <label>Memory highlight:</label>
+              <textarea maxlength="450" formControlName="memory" class="memory" type="text" #memory
+                (input)="checkInput()"></textarea>
+            </div>
+          </div>
+          <div class="group2">
+            <button class="buttonAdd" (click)="add()" [disabled]="isInputEmpty">
+              <div class="line1" [ngClass]="added === true ? 'line1F':'line1'"></div>
+              <div class="line2" [ngClass]="added === true ? 'line2F':'line2'"></div>
+            </button>
+            <p class="indication" #view>Memory added!</p>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

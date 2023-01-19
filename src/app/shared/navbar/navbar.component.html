@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="subContainer">
+    <div class="wrapper">
+      <div class="textContainer">
+        <h1 class="text"
+          [ngClass]="[logoutButtonState === true ? 'fadeIn':'!fadeIn', logoutButtonState === false ? 'fadeOut':'!fadeOut']">
+          {{introGreet}}</h1>
+        <h1 #introText>Human</h1>
+      </div>
+      <div class="logoutIcon" [ngClass]="logoutButtonState === true ? 'logoutIconActive':'logoutIconInactive'"
+        (click)="logout()">
+        <div class="circleBottom">
+          <div class="state" (mouseenter)="changeState()" (mouseleave)="changeState()"></div>
+          <div class="circleMiddle" [ngClass]="logoutButtonState === true ? 'circleMiddleActive':'!circleMiddleActive'">
+            <div class="topCircleBackground">
+              <div class="circleTop" [ngClass]="logoutButtonState === true ? 'circleTopActive':'circleTopInactive'">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="linkBar">
+    <div
+      [ngClass]="[position === 1 ? 'position1':'!position1', position === 2 ? 'position2':'!position2', position === 3 ? 'position3':'!position3']">
+    </div>
+    <a routerLink="/home/dashboard" routerLinkActive="routerLinkActive" #dashboard
+      (click)="changePosition1()">Dashboard</a>
+    <a routerLink="/home/search" routerLinkActive="routerLinkActive" #search (click)="changePosition2()">Search</a>
+    <a routerLink="/home/memories" routerLinkActive="routerLinkActive" #memories
+      (click)="changePosition3()">Memories</a>
+  </div>
+</div>

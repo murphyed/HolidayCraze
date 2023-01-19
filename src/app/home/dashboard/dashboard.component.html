@@ -1,0 +1,38 @@
+<div class="container">
+  <section class="s1">
+    <h1 class="mStatus">Memories {{ memoryBoxStatus }}</h1>
+  </section>
+  <section class="s2">
+    <div class="subContainer">
+      <div class="group">
+        <div class="infoContainer">
+          <h3 class="label">Memories viewed to date.</h3>
+          <h3 class="value">{{ memoriesVd}}</h3>
+        </div>
+        <div class="infoContainer">
+          <h3 class="label">Memories to view this year.</h3>
+          <h3 class="value">{{ memoriesToV }}</h3>
+        </div>
+      </div>
+      <div class="group">
+        <div class="infoContainer2">
+          <div class="subGroup" [ngClass]="viewCountry1 === true ? 'subGroupActive':'!subGroupActive'"
+            (click)="countryState1()">
+            <h3 *ngIf="!viewCountry1" class="label2" #label1>Country with most memories viewed.</h3>
+            <div *ngFor="let country of mv">
+              <h3 *ngIf="viewCountry1" class="value2" #country1>{{
+                country}}</h3>
+            </div>
+          </div>
+          <div class="subGroup" [ngClass]="viewCountry2 === true ? 'subGroupActive':'subGroup'"
+            (click)="countryState2()">
+            <h3 *ngIf="!viewCountry2" class="label2" #label2>Country with most memories to view.</h3>
+            <div *ngFor="let country of mtv">
+              <h3 *ngIf="viewCountry2" class="value2" #country2>{{ country }}</h3>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>

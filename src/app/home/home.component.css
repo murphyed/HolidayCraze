@@ -1,0 +1,28 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  padding-top: 1rem;
+  padding-right: 2rem;
+  padding-left: 2rem;
+  animation-name: fadeIn;
+  animation-timing-function: ease-in;
+  animation-iteration-count: 1;
+  animation-duration: 500ms;
+  transition: 500ms;
+  /* justify-content: center;
+  align-items: center; */
+}
+
+.subContainer {
+  display: flex;
+  justify-content: center;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
